@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Sigbovik 2024 Paper</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./ringfuck.js"></script>
+    <script src="./ringfuckWasmRunner.js"></script>
+  </head>
+  <body>
+    <ul class="menuBar">
+        <li><a href="/">Home</a></li>
+        <li><a href="ringfuck.html">Test</a></li>
+    </ul>
+    <div class="paper">
+        <h1>Ringfuck Interpreter</h1>
+            <p>Ringfuck is an esoteric programming language with the same instruction set as <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>, but instead of a single linear tape of memory Ringfuck has a set of memory rings. If you want to read more you can read our previous <a href="https://github.com/RyanHornby/ringfuck/blob/master/SIGBOVIK_23.pdf">SIGBOVIK paper</a> on the subject.</p>
+
+          <form id="interpreter-form">
+            <fieldset>
+              <div class="row responsive-label"><div class="col-sm-12 col-md-3"><label for="cf-code">Code</label></div>
+              <div class="col-sm-12 col-md"><textarea type="text" placeholder="" id="cf-code" name="Code" style="width:85%;"></textarea></div></div>
+              <div class="row responsive-label"><div class="col-sm-12 col-md-3"><label for="cf-output">Output</label></div>
+              <div class="col-sm-12 col-md"><input style="width:85%;" placeholder="" id="cf-output" name ="Output" readonly></input></div></div>
+              <button type="button" onclick="prepRunCode()">Run Code</button>
+            </fieldset>
+          </form>
+    </div>
+  </body>
+</html>

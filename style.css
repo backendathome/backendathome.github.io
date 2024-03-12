@@ -1,0 +1,161 @@
+body {
+    background-color: gray;
+}
+
+.paper {
+    margin: auto;
+    width: 16cm;
+    border: solid 1px;
+    padding: 1in;
+    background-color: white;
+    margin-top: 10px;
+}
+
+header {
+    display: flex;
+}
+
+header .logo {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+header .logo img {
+    height: 100%;
+}
+
+#header-top {
+    height:50%;
+}
+
+#header-bottom {
+    height:50%;
+}
+
+#header-bottom .button {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin:0;
+    line-height: 1.5;
+    height: auto;
+}
+
+.ruler-container {
+    background-color: beige;
+    border: none;
+}
+
+header.ruler-container {
+    height: 20px;
+    position: sticky;
+    top: 55.6px;
+}
+
+#y-ruler-bar {
+    position: absolute;
+    width: 20px;
+    height: 1414.08px;
+}
+
+.ruler {
+    --ruler-num-c: #888;
+    --ruler-num-fz: 10px;
+    --ruler-num-pi: 0.75ch;
+    --ruler-unit: 1cm;
+    --ruler-x: 1;
+    --ruler-y: 1;
+
+    --ruler1-bdw: 1px;
+    --ruler1-c:  #BBB;
+    --ruler1-h: 8px;
+    --ruler1-space: 0.2;
+
+    --ruler2-bdw: 1px;
+    --ruler2-c:  #BBB;
+    --ruler2-h: 20px;
+    --ruler2-space: 1;
+}
+
+.ruler-x {
+    background-image:
+    linear-gradient(90deg, var(--ruler1-c) 0 var(--ruler1-bdw), transparent 0),
+    linear-gradient(90deg, var(--ruler2-c) 0 var(--ruler2-bdw), transparent 0);
+    background-size:
+    calc(var(--ruler-unit) * var(--ruler1-space) * var(--ruler-x)) var(--ruler1-h),
+    calc(var(--ruler-unit) * var(--ruler2-space) * var(--ruler-x)) var(--ruler2-h);
+
+    margin: auto;
+    width: 21cm;
+    height: 100%;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+.ruler-y {
+    background-position: 0 10px;
+    background-image:
+    linear-gradient(0deg, var(--ruler1-c) 0 var(--ruler1-bdw), transparent 0),
+    linear-gradient(0deg, var(--ruler2-c) 0 var(--ruler2-bdw), transparent 0);
+    background-size:
+    var(--ruler1-h) calc(var(--ruler-unit) * var(--ruler1-space) * var(--ruler-y)),
+    var(--ruler2-h) calc(var(--ruler-unit) * var(--ruler2-space) * var(--ruler-y));
+
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-y;
+}
+
+.menuBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+#loading-dialog {
+background-color: rgba(255,255,255,0);
+border: none;
+width: 500px;
+}
+
+#loading-dialog::backdrop {
+background-color: white;
+opacity: 0.75;
+}
+
+#loading-dialog p {
+display: flex;
+align-items: center;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:visited,
+li a:focus,
+li a:link {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #e8ebee;
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+}

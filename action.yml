@@ -1,0 +1,6 @@
+# action.yml
+name: 'HTML changer'
+description: 'Changes HTML based on changes file'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
