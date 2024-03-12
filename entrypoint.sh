@@ -2,13 +2,13 @@
 
 cat template.html > index.html
 
-cat new_changes >> changes
+echo $1 >> changes
 
 while IFS= read -r line; do
     change_type=`echo $line | cut -d" " -f1`
     change_vals=`echo $line | cut -d" " -f2-`
     case $change_type in
-      text)
+      comment)
         echo "<pre>$change_vals</pre>" >> index.html
       ;;
       *)
@@ -28,6 +28,6 @@ echo "" > new_changes
 
 git add index.html
 git add changes
-git add new_changes
 git commit -m "updated index.html"
 git push
+
