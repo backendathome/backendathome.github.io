@@ -7,16 +7,6 @@ document.getElementById("y-ruler-bar").style.height = document.getElementById("p
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 const octokit = new Octokit({ auth: `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` });
 
-// Compare: https://docs.github.com/en/rest/reference/users#get-the-authenticated-user
-async function check_github() {
-    const {
-    data: { login },
-    } = await octokit.rest.users.getAuthenticated();
-    console.log("Hello, %s", login);
-}
-
-check_github()
-
 var loading_modal = document.getElementById("loading-dialog");
 var dialup_tone = document.getElementById("loading-sound");
 var form = document.getElementById("comment-form");
