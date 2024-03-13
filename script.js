@@ -18,7 +18,7 @@ async function check_github() {
     console.log(login);
 }
 
-// check_github()
+check_github()
 
 var loading_modal = document.getElementById("loading-dialog");
 var dialup_tone = document.getElementById("loading-sound");
