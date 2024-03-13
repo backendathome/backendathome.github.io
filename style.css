@@ -2,7 +2,7 @@ body {
     background-color: gray;
 }
 
-.paper {
+#paper {
     margin: auto;
     width: 16cm;
     border: solid 1px;
@@ -54,8 +54,8 @@ header.ruler-container {
 
 #y-ruler-bar {
     position: absolute;
-    width: 20px;
-    height: 1414.08px;
+    width: 30px;
+    height: 1400px;
 }
 
 .ruler {
