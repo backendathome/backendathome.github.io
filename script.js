@@ -5,7 +5,7 @@ console.log(document.getElementById("paper").offsetHeight);
 document.getElementById("y-ruler-bar").style.height = document.getElementById("paper").offsetHeight + 10 + "px";
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-const octokit = new Octokit({ auth: `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` });
+const octokit = new Octokit({ auth: `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` });
 
 // Compare: https://docs.github.com/en/rest/reference/users#get-the-authenticated-user
 async function check_github() {
