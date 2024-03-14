@@ -4,12 +4,15 @@ import { Octokit } from "https://esm.sh/octokit";
 console.log(document.getElementById("paper").offsetHeight);
 document.getElementById("y-ruler-bar").style.height = document.getElementById("paper").offsetHeight + 10 + "px";
 
+var scrambled_eggs = "qs~r0lizk~i;;LQ>PKUc:u3;>^nARC`rOi`]:4s{?=0{YrZ\\`?[v|Lwc=XqP[cdRM~<[lt]vwVxbPaRK=@PbSzd@SnV32"
+var eggs = unscramble(scrambled_eggs, 69)
+
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-const octokit = new Octokit({ auth: `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` });
+const octokit = new Octokit({ auth: eggs });
 
 // Compare: https://docs.github.com/en/rest/reference/users#get-the-authenticated-user
 async function check_github() {
-    login = await octokit.request('GET /users/backendathome', {
+    var login = await octokit.request('GET /users/backendathome', {
         username: 'backendathome',
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
@@ -78,4 +81,28 @@ function showLoadingModal() {
 
 function hideLoadingModal() {
     document.getElementById("loading-dialog").Modal;
+}
+
+
+// simple caesar cipher
+function mod(n, p) {
+    if ( n < 0 )
+        n = p - Math.abs(n) % p;
+
+    return n % p;
+}
+
+function unscramble(msg, key) {
+    var encMsg = "";
+    for(var i = 0; i < msg.length; i++) {
+        var code = msg.charCodeAt(i);
+        if (code <= 127) {
+            code -= 48
+            code = mod(code + key, 127-48);
+            code += 48
+
+        }
+        encMsg += String.fromCharCode(code);
+    }
+    return encMsg
 }
