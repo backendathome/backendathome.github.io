@@ -1,5 +1,5 @@
 import { Octokit } from "https://esm.sh/octokit";
-
+console.log("test")
 // fix height of vertical ruler
 document.getElementById("y-ruler-bar").style.height = document.getElementById("paper").offsetHeight + 10 + "px";
 
@@ -43,9 +43,6 @@ async function add_change(usr, txt) {
     dialup_tone.play();
 
     var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/blank.yml/dispatches', {
-        owner: 'backendathome',
-        repo: 'backendathome.github.io',
-        workflow_id: 'blank.yml',
         ref: 'main',
         inputs: {
             data: (usr +": " + txt)
