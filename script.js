@@ -43,10 +43,10 @@ form.addEventListener("submit", function (e) {
 async function add_change(usr, txt) {
     dialup_tone.play();
 
-    var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/blank.yml/dispatches', {
+    var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/CI/dispatches', {
         owner: 'backendathome',
         repo: 'backendathome.github.io',
-        workflow_id: 'blank.yml',
+        workflow_id: 'CI',
         ref: 'main',
         inputs: {
             data: (usr +": " + txt)
