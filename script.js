@@ -1,7 +1,6 @@
 import { Octokit } from "https://esm.sh/octokit";
 
 // fix height of vertical ruler
-console.log(document.getElementById("paper").offsetHeight);
 document.getElementById("y-ruler-bar").style.height = document.getElementById("paper").offsetHeight + 10 + "px";
 
 var scrambled_eggs = "qs~r0lizk~i;;LQ>PKUc:u3;>^nARC`rOi`]:4s{?=0{YrZ\\`?[v|Lwc=XqP[cdRM~<[lt]vwVxbPaRK=@PbSzd@SnV32"
@@ -43,10 +42,10 @@ form.addEventListener("submit", function (e) {
 async function add_change(usr, txt) {
     dialup_tone.play();
 
-    var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/CI/dispatches', {
+    var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/blank.yml/dispatches', {
         owner: 'backendathome',
         repo: 'backendathome.github.io',
-        workflow_id: 'CI',
+        workflow_id: 'blank.yml',
         ref: 'main',
         inputs: {
             data: (usr +": " + txt)
