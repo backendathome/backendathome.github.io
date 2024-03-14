@@ -24,8 +24,6 @@ apk add git
 git config --global user.name "Matthew Safar"
 git config --global user.email "matthewsafar@gmail.com"
 
-echo "" > new_changes
-
 git add index.html
 git add changes
 git commit -m "updated index.html"

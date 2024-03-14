@@ -45,14 +45,13 @@ async function add_change(usr, txt) {
     var result = await octokit.request('POST /repos/backendathome/backendathome.github.io/actions/workflows/blank.yml/dispatches', {
         ref: 'main',
         inputs: {
-            data: (usr +": " + txt)
+            data: ("comment " + usr + ": " + txt)
         },
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
         }
     })
     console.log("woo result");
-    // await new Promise(res => setTimeout(res, 1000));
     console.log(result);
     var commit_check
     do {
