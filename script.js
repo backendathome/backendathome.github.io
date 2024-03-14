@@ -56,7 +56,7 @@ async function add_change(usr, txt) {
     var commit_check
     do {
         await new Promise(res => setTimeout(res, 5000));
-        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/actions/runs?q=status:queued', {
+        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/actions/runs', {
             owner: 'backendathome',
             repo: 'backendathome.github.io',
             headers: {
@@ -64,15 +64,7 @@ async function add_change(usr, txt) {
             }
         })
         console.log(commit_check)
-        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/actions/runs?q=status:in_progress', {
-            owner: 'backendathome',
-            repo: 'backendathome.github.io',
-            headers: {
-                'X-GitHub-Api-Version': '2022-11-28'
-            }
-        })
-        console.log(commit_check)
-    } while (commit_check["data"]["content"] != "Cg==\n")
+    } while (commit_check["data"]["workflow_runs"][0]["name"] != "pages build and deployment" && commit_check["data"]["workflow_runs"][0]["status"] != "completed")
     loading_modal.close()
     window.location.reload()
 }
