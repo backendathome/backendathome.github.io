@@ -64,6 +64,14 @@ async function add_change(usr, txt) {
             }
         })
         console.log(commit_check)
+        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/actions/runs?q=status:in_progress', {
+            owner: 'backendathome',
+            repo: 'backendathome.github.io',
+            headers: {
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        })
+        console.log(commit_check)
     } while (commit_check["data"]["content"] != "Cg==\n")
     loading_modal.close()
     window.location.reload()
