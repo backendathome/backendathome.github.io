@@ -21,8 +21,8 @@ cat template_end.html >> index.html
 apk update
 apk add git
 
-git config --global user.name "Matthew Safar"
-git config --global user.email "matthewsafar@gmail.com"
+git config --global user.name "backendathome"
+git config --global user.email "backendathome@gmail.com"
 
 git add index.html
 git add changes

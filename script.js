@@ -56,14 +56,14 @@ async function add_change(usr, txt) {
     var commit_check
     do {
         await new Promise(res => setTimeout(res, 5000));
-        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/contents/new_changes', {
+        commit_check = await octokit.request('GET /repos/backendathome/backendathome.github.io/actions/runs?q=status:queued', {
             owner: 'backendathome',
             repo: 'backendathome.github.io',
-            path: 'new_changes',
             headers: {
                 'X-GitHub-Api-Version': '2022-11-28'
             }
         })
+        console.log(commit_check)
     } while (commit_check["data"]["content"] != "Cg==\n")
     loading_modal.close()
     window.location.reload()
