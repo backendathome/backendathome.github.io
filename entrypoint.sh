@@ -6,7 +6,7 @@ echo $1 >> changes
 
 while IFS= read -r line; do
     change_type=`echo $line | cut -d" " -f1`
-    change_vals=`echo $line | cut -d" " -f2-`
+    change_vals=`echo $line | cut -d" " -f2- | sed 's/\&/\&amp/g' | sed 's/</\&lt/g' | sed 's/>/\&gt/g'`
     case $change_type in
       comment)
         echo "<pre>$change_vals</pre>" >> index.html
