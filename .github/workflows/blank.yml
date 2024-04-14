@@ -27,4 +27,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run our script
-        run: python test.py "${{github.event.inputs.data}}" && bash entrypoint.sh "${{github.event.inputs.data}}"
+        env:
+          ARGS: ${{github.event.inputs.data}}
+        run: bash entrypoint.sh "$ARGS"
