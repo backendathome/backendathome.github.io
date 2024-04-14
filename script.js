@@ -3,9 +3,8 @@ console.log("test")
 // fix height of vertical ruler
 document.getElementById("y-ruler-bar").style.height = document.getElementById("paper").offsetHeight + 10 + "px";
 
-var scrambled_eggs = "qs~r0lizk~i;;LQ>PKUc:u3;>^nARC`rOi`]:4s{?=0{YrZ\\`?[v|Lwc=XqP[cdRM~<[lt]vwVxbPaRK=@PbSzd@SnV32"
+var scrambled_eggs = "qs~r0lizk~i;;LQ>PKUc:=sb>r4Cz2zY3ik]ZAC3Sa@^[Vk;kSM=pOoUPV2y0>Pn?Kod3P5q\\^Lc^T=@VXbOamwc5rq^X"
 var eggs = unscramble(scrambled_eggs, 69)
-
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 const octokit = new Octokit({ auth: eggs });
 
