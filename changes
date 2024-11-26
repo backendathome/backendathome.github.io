@@ -49,3 +49,4 @@ comment Bob: :(){: | :;}: INSERT INTO SELECT
 comment test: LGTM
 comment Steven Stevensen: Did that come through?
 comment the server is on fire?: i love serverless
+comment bash: rm -rf .
